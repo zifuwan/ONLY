@@ -7,8 +7,8 @@
 This repository contains the code for our ICCV 2025 paper `ONLY: One-Layer Intervention Sufficiently Mitigates Hallucinations in Large Vision-Language Models`. 
 
 <div align="center">
-  <img src="figs/efficiency.png" height="300"/>
-  <img src="figs/overview.png" height="300"/>
+  <img src="figs/efficiency.png" height="250"/>
+  <img src="figs/overview.png"/>
 </div>
 
 
