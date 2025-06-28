@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Self-Correcting Decoding with Generative Feedback for Mitigating Hallucinations in Large Vision-Language Models</title>
+  <link rel="icon" type="image/x-icon" href="static/images/logo.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+    });
+</script>
+
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Self-Correcting Decoding with Generative Feedback for Mitigating Hallucinations in Large Vision-Language Models</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+                <span class="author-block">
+                  <a href="https://zhangce01.github.io/" target="_blank">Ce Zhang$^{* 1}$</a>,</span>
+                  <span class="author-block">
+                  <a href="https://zifuwan.github.io/" target="_blank">Zifu Wan$^{* 1}$</a>,</span>
+                  <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=gzcrYIoAAAAJ&hl=en" target="_blank">Zhehan Kan$^{2}$</a>,</span>
+                  <span class="author-block">
+                  <a href="https://www.cs.cmu.edu/~qianlim/" target="_blank">Martin Q. Ma$^{1}$</a>,</span>
+                  <span class="author-block">
+                  <a href="https://simonstepputtis.com/" target="_blank">Simon Stepputtis$^{1}$</a>,</span>
+                  <span class="author-block">
+                  <a href="https://www.cs.cmu.edu/~deva/" target="_blank">Deva Ramanan$^{1}$</a>,</span>
+                  <span class="author-block">
+                  <a href="https://www.cs.cmu.edu/~rsalakhu/" target="_blank">Russ Salakhutdinov$^{1}$</a>,</span>
+                  <span class="author-block">
+                  <a href="https://www.cs.cmu.edu/~morency//" target="_blank">Louis-Philippe Morency$^{1}$</a>,</span>
+                  <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=VWv6a9kAAAAJ&hl=en" target="_blank">Katia Sycara$^{1}$</a>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://yaqi-xie.me/" target="_blank">Yaqi Xie$^{1}$</a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">$^{*}$<i>Equal contribution</i><br>$^{1}$School of Computer Science, Carnegie Mellon University<br>$^{2}$Shenzhen International Graduate School, Tsinghua University<br><b>ICLR 2025</b></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+
+                    <!-- PDF link -->
+                    <span class="link-block">
+                      <a href="static/pdfs/ICLR_2025_Hallucination.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2502.06130" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Github link -->
+              <span class="link-block">
+                <a href="https://github.com/zhangce01/DeGF" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+              </span>
+              <figure>
+                <br>
+                <img src="static/images/intro3.png" alt="fail" width="100%"">
+                <figcaption class="content has-text-left"  style="word-break:normal"><b>Figure 1. Generative models can visualize and help correct various types of hallucinations in the initial response.</b>
+                  In the first query, we provide LLaVA-1.5 with the prompt "<i>Describe this image in detail</i> " to produce captions for two examples from LLaVA-Bench. Based on the initial response, we utilize Stable Diffusion XL to generate a new image $v'$, which effectively highlights hallucinations and provides valuable self-feedback. In the second query, our approach incorporates both the original image $v$ and the generated image $v'$ into the decoding process, using the feedback to successfully correct various types of hallucinations.</figcaption>
+              </figure>
+              <figure>
+                <br>
+                <img src="static/images/overview.png" alt="fail" width="100%"">
+                <figcaption class="content has-text-left"  style="word-break:normal"><b>Figure 2. Overview of our proposed DeGF.</b>
+                  Our method follows a two-step process: first, a generative model produces a high-quality image based on the initial response; second, this image acts as an auxiliary visual reference, providing feedback to refine the next-token predictions. Additionally, we introduce self-correcting decoding, which either enhances or contrasts the next-token predictions conditioned on the original and generated images to mitigate hallucinations in the LVLM response.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper motivation -->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Highlights</h2>
+        <div class="content has-text-justified">
+          <p>
+            <ul>
+              <li>We investigate the potential of text-to-image generative models in mitigating hallucinations in LVLMs and demonstrate that text-to-image generative models can provide valuable self-feedback for mitigating hallucinations at both the response and token levels.</li>
+              <li>We propose self-correcting Decoding with Generative Feedback (DeGF), a novel training-free decoding algorithm for LVLMs that recursively enhances the accuracy of responses by integrating feedback from text-to-image generative models with complementary/contrastive decoding.</li>
+              <li>Extensive experimental evaluations across six benchmarks demonstrate that our DeGF consistently outperforms state-of-the-art approaches in effectively mitigating hallucinations in LVLMs.</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            While recent Large Vision-Language Models (LVLMs) have shown remarkable performance in multi-modal tasks, they are prone to generating hallucinatory text responses that do not align with the given visual input, which restricts their practical applicability in real-world scenarios. In this work, inspired by the observation that the text-to-image generation process is the inverse of image-conditioned response generation in LVLMs, we explore the potential of leveraging text-to-image generative models to assist in mitigating hallucinations in LVLMs. We discover that generative models can offer valuable self-feedback for mitigating hallucinations at both the response and token levels. Building on this insight, we introduce self-correcting Decoding with Generative Feedback (DeGF), a novel training-free algorithm that incorporates feedback from text-to-image generative models into the decoding process to effectively mitigate hallucinations in LVLMs. Specifically, DeGF generates an image from the initial response produced by LVLMs, which acts as an auxiliary visual reference and provides self-feedback to verify and correct the initial response through complementary or contrastive decoding. Extensive experimental results validate the effectiveness of our approach in mitigating diverse types of hallucinations, consistently surpassing state-of-the-art methods across six benchmarks. Code is available at https://github.com/zhangce01/DeGF.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experimental Results</h2>
+
+        <div class="content has-text-left is-size-5">
+        <strong>Results on POPE</strong>
+        </div>
+        <figure>
+          <img src="static/images/pope.png" alt="fail" width="100%"">
+          <figcaption class="content has-text-left" style="word-break:normal"><b>Table 1. Results on POPE benchmark</b>
+            Higher ($\uparrow$) accuracy, precision, recall, and F1 indicate better performance. The best results are <b>bolded</b>, and the second-best are <u>underlined</u>.
+        </figure>
+        <br>
+        <div class="content has-text-left is-size-5">
+          <strong>Results on CHAIR</strong>
+        </div>
+        <figure>
+          <img src="static/images/chair.png" alt="fail" width="100%">
+          <figcaption class="content has-text-left" style="word-break:normal">
+            <b>Table 2. Results on CHAIR benchmark.</b> We limit the maximum number of new tokens to 64. Lower ($\downarrow$) CHAIR$_S$, CHAIR$_I$ and higher ($\uparrow$) recall and length indicate better performance. The best results in each setting are <b>bolded</b>, and the second-best are <u>underlined</u>.
+          </figure>
+        <br>
+        <div class="content has-text-left is-size-5">
+          <strong>Results on MME</strong>
+        </div>
+        <figure>
+          <img src="static/images/mme.png" alt="fail" width="100%">
+          <figcaption class="content has-text-left" style="word-break:normal">
+            <b>Table 3. Results on MME-Hallucination and MMBench benchmark.</b>
+            We report the average MME scores along with the standard deviation across three random seeds for each subset. We also report the overall accuracy achieved by the different methods on the MMBench benchmark in the final column. Higher scores ($\uparrow$) indicate better performance. The best results are <b>bolded</b>, and the second-best are <u>underlined</u>.
+          </figure>
+          <br>
+        <div class="content has-text-left is-size-5">
+          <strong>Results on MMVP and GPT-4V-Aided Evaluation on LLaVA-Bench</strong>
+        </div>
+        <figure>
+          <img src="static/images/mmvp.png" alt="fail" width="100%">
+          <figcaption class="content has-text-left" style="word-break:normal">
+            <b>Figure 3. Results on MMVP and GPT-4V-Aided Evaluation on LLaVA-Bench.</b>
+            (<i>Left</i>) We apply our approach to LLaVA-1.5 and compare its performance against other hallucination mitigation methods; (<i>Right</i>) Higher accuracy and detailedness ($\uparrow$) indicate better performance. The evaluation is performed on LLaVA-1.5.
+          </figure>
+          <div class="content has-text-left is-size-5">
+            <strong>Case Study on LLaVA-Bench</strong>
+          </div>
+          <figure>
+            <img src="static/images/case.png" alt="fail" width="100%">
+            <figcaption class="content has-text-left" style="word-break:normal">
+              <b>Figure 4. Case study on the LLaVA-Bench benchmark.</b>
+              We compare the responses generated by regular decoding and our method using LLaVA-1.5. GPT-4V-aided evaluation results are also provided alongside the responses. Hallucinated and accurate content is highlighted in red} and green.
+            </figure>
+            <br>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper poster -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/ICLR_2025_DeGF_Poster_Resized.pdf" width="100%" height="700">
+          </iframe>
+        
+      </div>
+    </div>
+  </section>
+<!--End paper poster -->
+
+  <!-- Youtube video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            <!-- Youtube embed code here -->
+            <iframe src="https://www.youtube.com/embed/p1Od3Khu6uM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{zhang2025selfcorrecting,
+  title={Self-Correcting Decoding with Generative Feedback for Mitigating Hallucinations in Large Vision-Language Models},
+  author={Ce Zhang and Zifu Wan and Zhehan Kan and Martin Q. Ma and Simon Stepputtis and Deva Ramanan and Russ Salakhutdinov and Louis-Philippe Morency and Katia P. Sycara and Yaqi Xie},
+  booktitle={The Thirteenth International Conference on Learning Representations},
+  year={2025},
+  url={https://openreview.net/forum?id=tTBXePRKSx}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
