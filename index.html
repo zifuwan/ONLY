@@ -203,13 +203,22 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Experimental Results</h2>
-
+        
+        <div class="content has-text-left is-size-5">
+          <strong>Efficiency comparison</strong>
+          </div>
+          <figure>
+            <img src="static/images/efficiency.png" alt="fail" width="100%"">
+            <figcaption class="content has-text-left" style="word-break:normal"><b>Table 1. Efficiency comparison.</b>
+              For each method, we present the average inference latency per instance and peak GPU memory. Experiments are conducted on a single RTX A6000 Ada GPU. The best results are <b>bolded</b>, and the second-best are <u>underlined</u>.
+          </figure>
+          <br>
         <div class="content has-text-left is-size-5">
         <strong>Results on POPE</strong>
         </div>
         <figure>
           <img src="static/images/pope.png" alt="fail" width="100%"">
-          <figcaption class="content has-text-left" style="word-break:normal"><b>Table 1. Results on POPE benchmark</b>
+          <figcaption class="content has-text-left" style="word-break:normal"><b>Table 2. Results on POPE benchmark.</b>
             Higher ($\uparrow$) accuracy, precision, recall, and F1 indicate better performance. The best results are <b>bolded</b>, and the second-best are <u>underlined</u>.
         </figure>
         <br>
@@ -219,7 +228,7 @@
         <figure>
           <img src="static/images/chair.png" alt="fail" width="100%">
           <figcaption class="content has-text-left" style="word-break:normal">
-            <b>Table 2. Results on CHAIR benchmark.</b> We limit the maximum number of new tokens to 64 or 128. Lower ($\downarrow$) CHAIR$_S$ and CHAIR$_I$ indicate better performance. The best results in each setting are <b>bolded</b>, and the second-best are <u>underlined</u>.
+            <b>Table 3. Results on CHAIR benchmark.</b> We limit the maximum number of new tokens to 64 or 128. Lower ($\downarrow$) CHAIR$_S$ and CHAIR$_I$ indicate better performance. The best results in each setting are <b>bolded</b>, and the second-best are <u>underlined</u>.
           </figure>
         <br>
         <div class="content has-text-left is-size-5">
@@ -228,7 +237,7 @@
         <figure>
           <img src="static/images/mme.png" alt="fail" width="60%">
           <figcaption class="content has-text-left" style="word-break:normal">
-            <b>Table 3. Results on MME-Hallucination and MMBench benchmark.</b>
+            <b>Table 4. Results on MME-Hallucination and MMBench benchmark.</b>
             We report the average MME scores along with the standard deviation across three random seeds for each subset. Higher scores ($\uparrow$) indicate better performance. The best results are <b>bolded</b>, and the second-best are <u>underlined</u>.
           </figure>
           <br>
