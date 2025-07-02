@@ -1,6 +1,6 @@
 # [ICCV 2025] ONLY
 
-[![Website](https://img.shields.io/badge/Project-Website-green)](https://zifuwan.github.io/) [![arXiv](https://img.shields.io/badge/arXiv-2507.00898-red)]([https://zifuwan.github.io/](http://arxiv.org/abs/2507.00898)) [![Conference](https://img.shields.io/badge/ICCV-2025-blue)](https://iccv.thecvf.com/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Website](https://img.shields.io/badge/Project-Website-green)](https://zifuwan.github.io/) [![arXiv](https://img.shields.io/badge/arXiv-2507.00898-red)](http://arxiv.org/abs/2507.00898) [![Conference](https://img.shields.io/badge/ICCV-2025-blue)](https://iccv.thecvf.com/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 👀Introduction
 
