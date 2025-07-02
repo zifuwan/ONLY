@@ -1,6 +1,6 @@
 # [ICCV 2025] ONLY
 
-[![Website](https://img.shields.io/badge/Project-Website-green)](https://zifuwan.github.io/) [![arXiv](https://img.shields.io/badge/arXiv-2502.06130-red)](https://zifuwan.github.io/) [![Conference](https://img.shields.io/badge/ICCV-2025-blue)](https://iccv.thecvf.com/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Website](https://img.shields.io/badge/Project-Website-green)](https://zifuwan.github.io/) [![arXiv](https://img.shields.io/badge/arXiv-2507.00898-red)]([https://zifuwan.github.io/](http://arxiv.org/abs/2507.00898)) [![Conference](https://img.shields.io/badge/ICCV-2025-blue)](https://iccv.thecvf.com/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 👀Introduction
 
@@ -15,7 +15,7 @@ This repository contains the code for our ICCV 2025 paper `ONLY: One-Layer Inter
 
 ## 💡Environment
 
-We test our codebase with PyTorch 2.0.1. Please install corresponding PyTorch and CUDA versions according to your computational resources.
+We test our codebase with PyTorch 2.0.1. Please install the corresponding PyTorch and CUDA versions according to your computational resources.
 
 ```
 conda create -n ONLY python=3.10
@@ -51,7 +51,7 @@ Our codebase is adapted from  [RITUAL](https://github.com/sangminwoo/RITUAL), [V
 
 ## 📧Contact
 
-If you have any questions, please  contact at [zifuw@andrew.cmu.edu](mailto:zifuw@andrew.cmu.edu).
+If you have any questions, please  contact [zifuw@andrew.cmu.edu](mailto:zifuw@andrew.cmu.edu).
 
 ## 📌 BibTeX & Citation
 
