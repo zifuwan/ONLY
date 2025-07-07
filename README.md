@@ -58,5 +58,10 @@ If you have any questions, please  contact [zifuw@andrew.cmu.edu](mailto:zifuw@a
 If you find this code useful, please consider citing our work:
 
 ```bibtex
-coming soon
+@article{wan2025only,
+  title={ONLY: One-Layer Intervention Sufficiently Mitigates Hallucinations in Large Vision-Language Models},
+  author={Wan, Zifu and Zhang, Ce and Yong, Silong and Ma, Martin Q and Stepputtis, Simon and Morency, Louis-Philippe and Ramanan, Deva and Sycara, Katia and Xie, Yaqi},
+  journal={arXiv preprint arXiv:2507.00898},
+  year={2025}
+}
 ```
